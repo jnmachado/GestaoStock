@@ -13,9 +13,10 @@ namespace GestaoStock
 {
     class DAL
     {
+        //Connection String como atributo para nao repetir codigo
         private string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\jnmma\source\repos\GestaoStock\BaseDados.mdf;Integrated Security=True";
 
-        public int login(string user, string pass)
+        public int login(string user, string pass)//Verifica se existe aquele user com aquela pass e chama a função que atualiza a data e hora do ultimo login
         {
             try
             {
@@ -37,7 +38,7 @@ namespace GestaoStock
             }
         }
 
-        public bool isAdmin(string user)
+        public bool isAdmin(string user)//verifica se user é admin ou não
         {
             try
             {
@@ -67,7 +68,7 @@ namespace GestaoStock
             
         }
 
-        public void updateDeHLastLogin(string user)
+        public void updateDeHLastLogin(string user)//atualiza a data e hora do ultimo login
         {
             
             try
@@ -88,7 +89,7 @@ namespace GestaoStock
             }
         }
 
-        public int userExist(string user)
+        public int userExist(string user)//verifica se existe um determinado user
         {
             try
             {
@@ -109,7 +110,7 @@ namespace GestaoStock
             }
         }
 
-        public void inserirUser(string nome, string email, int tel, string user, string pass, int priv)
+        public void inserirUser(string nome, string email, int tel, string user, string pass, int priv)//Insere user na base de dados
         {
             try
             {
@@ -138,7 +139,7 @@ namespace GestaoStock
             }
         }
 
-        public DataTable preencherDGV(string cmd)
+        public DataTable preencherDGV(string cmd)//função universal para preencher tabelas
         {
             SqlConnection conn = new SqlConnection(constr);
             SqlCommand cmmd = new SqlCommand(cmd, conn);

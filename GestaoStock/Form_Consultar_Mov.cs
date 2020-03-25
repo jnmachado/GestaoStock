@@ -12,16 +12,16 @@ namespace GestaoStock
 {
     public partial class Form_Consultar_Mov : Form
     {
-        public Form_Consultar_Mov()
+        public Form_Consultar_Mov()//Preenche a DGV com todos os Movimentos
         {
             InitializeComponent();
             BLL bl = new BLL();
             dgv_mov.DataSource = bl.fillDGV("tbl_mov");
         }
 
-        private void Form_Consultar_Mov_Load(object sender, EventArgs e)
+        private void Form_Consultar_Mov_Load(object sender, EventArgs e)//NÃO FAZ NADA
         {
-            // TODO: This line of code loads data into the 'baseDadosDataSet2.tbl_mov' table. You can move, or remove it, as needed.
+            
             
 
         }

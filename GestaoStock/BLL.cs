@@ -15,7 +15,7 @@ namespace GestaoStock
     class BLL
     {
         private DAL d = new DAL();
-        public bool validaLogin(string user, string passwd)
+        public bool validaLogin(string user, string passwd)//Recebe info da DAL e decide que form mostrar(form admin ou form user)
         {
             if (d.login(user, passwd) == 1)
             {
@@ -107,16 +107,16 @@ namespace GestaoStock
                 return 0;
             }
 
-        }
+        }//Valida info do Form e envia para a DAL. Recebe info da DAL e determina o sucesso da operação
 
-        public DataTable fillDGV(string tabela)
+        public DataTable fillDGV(string tabela)//Função universal para preencher as DGV
         {
             string cmd = "SELECT * FROM " + tabela + ";";
             return d.preencherDGV(cmd);
 
         }
 
-        public DataTable procurarNaDB(string pesquisa)
+        public DataTable procurarNaDB(string pesquisa)//Valida info do form e envia para a DAL
         {
             string cmd = "SELECT * FROM tbl_stock WHERE ref LIKE '%" + pesquisa + "%' OR qtd LIKE '%" + pesquisa + "%' OR qtd_min LIKE '%" + pesquisa + "%' OR custo_uni LIKE '%" + pesquisa + "%' OR pvp_uni LIKE '%" + pesquisa + "%' OR nome LIKE '%" + pesquisa + "%';";
             return d.preencherDGV(cmd);

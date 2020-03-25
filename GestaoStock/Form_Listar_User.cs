@@ -12,23 +12,23 @@ namespace GestaoStock
 {
     public partial class Form_Listar_User : Form
     {
-        public Form_Listar_User()
+        public Form_Listar_User() //Preenche o DGV com todos os utilizadores da BD
         {
             InitializeComponent();
             BLL bl = new BLL();
             dgv_user.DataSource = bl.fillDGV("tbl_login");
         }
 
-        private void Form_Listar_User_Load(object sender, EventArgs e)
+        private void Form_Listar_User_Load(object sender, EventArgs e)//NÃO FAZ NADA
         {
-            // TODO: This line of code loads data into the 'baseDadosDataSet1.tbl_login' table. You can move, or remove it, as needed.
+            
             
 
         }
 
-        private void btn_atual_Click(object sender, EventArgs e)
+        private void btn_atual_Click(object sender, EventArgs e)//Dá refresh à DGV
         {
-            
+            dgv_user.Refresh();
         }
     }
 }

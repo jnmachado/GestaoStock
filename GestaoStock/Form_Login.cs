@@ -15,18 +15,18 @@ namespace GestaoStock
         public Form_Login()
         {
             InitializeComponent();
-            this.MinimizeBox = false;
-            this.MaximizeBox = false;
+            this.MinimizeBox = false; //Retirar o Botão de Minimizar
+            this.MaximizeBox = false; //Retirar o Botão de Maximizar
 
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)//Permite fazer login carregando no BUTTON
         {
             login();
            
         }
 
-        private void txt_user_KeyDown(object sender, KeyEventArgs e)
+        private void txt_user_KeyDown(object sender, KeyEventArgs e)//Permite fazer login carregando no ENTER
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -35,7 +35,7 @@ namespace GestaoStock
 
         }
 
-        private void txt_pass_KeyDown(object sender, KeyEventArgs e)
+        private void txt_pass_KeyDown(object sender, KeyEventArgs e) //Permite fazer login carregando no ENTER
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -44,7 +44,7 @@ namespace GestaoStock
             }
         }
 
-        private void login()
+        private void login() //Envia o User e a Pass para a BLL
         {
             BLL b = new BLL();
 

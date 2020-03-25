@@ -18,12 +18,12 @@ namespace GestaoStock
             
         }      
 
-        private void btn_addcancelar_Click(object sender, EventArgs e)
+        private void btn_addcancelar_Click(object sender, EventArgs e)//Sai do Form
         {
             this.Close();
         }
 
-        private void btn_addlimpar_Click(object sender, EventArgs e)
+        private void btn_addlimpar_Click(object sender, EventArgs e)//Limpas as TextBoxes
         {
             this.txt_nome.Clear();
             this.txt_email.Clear();
@@ -34,7 +34,7 @@ namespace GestaoStock
             this.ckb_admin.Checked = false;
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private void btn_add_Click(object sender, EventArgs e)//Envia a info das textboxes para o BLL
         {
             BLL bll = new BLL();
             int priv;
@@ -86,37 +86,37 @@ namespace GestaoStock
 
         }
 
-        private void txt_nome_KeyDown(object sender, KeyEventArgs e)
+        private void txt_nome_KeyDown(object sender, KeyEventArgs e)//Envia a info das textboxes para o BLL carregando ENTER nesta textbox
         {
             insUser(sender, e);
         }
 
-        private void txt_email_KeyDown(object sender, KeyEventArgs e)
+        private void txt_email_KeyDown(object sender, KeyEventArgs e)//Envia a info das textboxes para o BLL carregando ENTER nesta textbox
         {
             insUser(sender, e);
         }
 
-        private void txt_tel_KeyDown(object sender, KeyEventArgs e)
+        private void txt_tel_KeyDown(object sender, KeyEventArgs e)//Envia a info das textboxes para o BLL carregando ENTER nesta textbox
         {
             insUser(sender, e);
         }
 
-        private void txt_adduser_KeyDown(object sender, KeyEventArgs e)
+        private void txt_adduser_KeyDown(object sender, KeyEventArgs e)//Envia a info das textboxes para o BLL carregando ENTER nesta textbox
         {
             insUser(sender, e);
         }
 
-        private void txt_addpass_KeyDown(object sender, KeyEventArgs e)
+        private void txt_addpass_KeyDown(object sender, KeyEventArgs e)//Envia a info das textboxes para o BLL carregando ENTER nesta textbox
         {
             insUser(sender, e);
         }
 
-        private void txt_readdpass_KeyDown(object sender, KeyEventArgs e)
+        private void txt_readdpass_KeyDown(object sender, KeyEventArgs e)//Envia a info das textboxes para o BLL carregando ENTER nesta textbox
         {
             insUser(sender, e);
         }
 
-        public void insUser(object sender, KeyEventArgs e)
+        public void insUser(object sender, KeyEventArgs e)//Criada Para evitar repetir código
         {
             if (e.KeyCode == Keys.Enter)
             {
