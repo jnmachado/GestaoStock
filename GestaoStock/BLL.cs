@@ -12,32 +12,34 @@ using System.Net.Mail;
 
 namespace GestaoStock
 {
-    class BLL
+    public class BLL
     {
         private DAL d = new DAL();
-        public bool validaLogin(string user, string passwd)//Recebe info da DAL e decide que form mostrar(form admin ou form user)
+        public string Sessao { get; set; }
+
+        public BLL()
+        {
+
+        }
+        public int validaLogin(string user, string passwd)//Recebe info da DAL e decide que form mostrar(form admin ou form user)
         {
             if (d.login(user, passwd) == 1)
             {
                 if(d.isAdmin(user))
-                {
-                    Form_Main_Admin f = new Form_Main_Admin();
-                    f.Show();
-                   
-                    return true;
+                {                    
+                    Sessao = user;
+                    return 2;
                 }
                 else
-                {
-                    Form_Main_User fmu = new Form_Main_User();
-                    fmu.Show();
-                    
-                    return true;
+                {                    
+                    Sessao = user;
+                    return 1;
                 }
             }
             else
             {
                 MessageBox.Show("Login Incorrecto");
-                return false;
+                return 0;
             }            
         }
 

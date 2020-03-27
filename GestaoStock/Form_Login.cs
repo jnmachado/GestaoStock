@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GestaoStock
 {
     public partial class Form_Login : Form
     {
+        
         public Form_Login()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace GestaoStock
         private void btn_login_Click(object sender, EventArgs e)//Permite fazer login carregando no BUTTON
         {
             login();
+            
            
         }
 
@@ -48,11 +51,19 @@ namespace GestaoStock
         {
             BLL b = new BLL();
 
-            if (b.validaLogin(txt_user.Text, txt_pass.Text))
+            if (b.validaLogin(txt_user.Text, txt_pass.Text) == 2)
             {
                 this.Hide();
+                Form_Main_Admin f = new Form_Main_Admin(b);
+                f.Show();
             }
-            else
+            if(b.validaLogin(txt_user.Text, txt_pass.Text) == 1)
+            {
+                this.Hide();
+                Form_Main_User f = new Form_Main_User();
+                f.Show();
+            }
+            if (b.validaLogin(txt_user.Text, txt_pass.Text) == 0)
             {
                 this.txt_user.Text = "";
                 this.txt_pass.Text = "";

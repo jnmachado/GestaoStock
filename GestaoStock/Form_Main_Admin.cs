@@ -13,10 +13,14 @@ namespace GestaoStock
     public partial class Form_Main_Admin : Form
     {
         public Form_Main_Admin()
+        {           
+            
+        }
+        public Form_Main_Admin(BLL b)
         {
-            InitializeComponent();
-            BLL bl = new BLL();
-            dgv_stock.DataSource = bl.fillDGV("tbl_stock");//Preenche a DGV
+            InitializeComponent();            
+            dgv_stock.DataSource = b.fillDGV("tbl_stock");//Preenche a DGV
+            lbl_status.Text = b.Sessao;
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)//Sai da APP
