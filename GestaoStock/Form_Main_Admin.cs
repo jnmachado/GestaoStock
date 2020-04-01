@@ -12,10 +12,7 @@ namespace GestaoStock
 {
     public partial class Form_Main_Admin : Form
     {
-        public Form_Main_Admin()
-        {           
-            
-        }
+        
         public Form_Main_Admin(BLL b)
         {
             InitializeComponent();            
@@ -98,7 +95,12 @@ namespace GestaoStock
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            Form_Add_Item fai = new Form_Add_Item();
+        }
 
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            this.dgv_stock.Refresh();
         }
     }
 }

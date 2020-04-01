@@ -64,6 +64,12 @@
   <ItemGroup>
     <Compile Include="BLL.cs" />
     <Compile Include="DAL.cs" />
+    <Compile Include="Form_Add_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Add_Item.Designer.cs">
+      <DependentUpon>Form_Add_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Adicionar_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Add_Item.resx">
+      <DependentUpon>Form_Add_Item.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Adicionar_User.resx">
       <DependentUpon>Form_Adicionar_User.cs</DependentUpon>
     </EmbeddedResource>

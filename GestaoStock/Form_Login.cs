@@ -47,7 +47,7 @@ namespace GestaoStock
             }
         }
 
-        private void login() //Envia o User e a Pass para a BLL
+        private void login() //Envia o User e a Pass para a BLL e Determina que Form abrir
         {
             BLL b = new BLL();
 

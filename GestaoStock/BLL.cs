@@ -15,12 +15,7 @@ namespace GestaoStock
     public class BLL
     {
         private DAL d = new DAL();
-        public string Sessao { get; set; }
-
-        public BLL()
-        {
-
-        }
+        public string Sessao { get; set; }       
         public int validaLogin(string user, string passwd)//Recebe info da DAL e decide que form mostrar(form admin ou form user)
         {
             if (d.login(user, passwd) == 1)
@@ -122,6 +117,11 @@ namespace GestaoStock
         {
             string cmd = "SELECT * FROM tbl_stock WHERE ref LIKE '%" + pesquisa + "%' OR qtd LIKE '%" + pesquisa + "%' OR qtd_min LIKE '%" + pesquisa + "%' OR custo_uni LIKE '%" + pesquisa + "%' OR pvp_uni LIKE '%" + pesquisa + "%' OR nome LIKE '%" + pesquisa + "%';";
             return d.preencherDGV(cmd);
+        }
+
+        public void addItem(string nome, string refe, string qtdini, string qtdmin, string custo, string preco)
+        {
+
         }
 
     }
